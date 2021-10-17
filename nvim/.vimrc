@@ -15,11 +15,12 @@ set encoding=utf-8
 set showmatch
 set laststatus=2
 set noshowmode
-set complete+=kspell
-set completeopt=menuone,longest
+" set complete+=kspell
+" set completeopt=menuone,longest
 set shortmess+=c
 set cursorline
 set updatetime=300
+set modifiable
 :setlocal spell spelllang=es
 set nospell
 set list lcs=tab:\|\ 
@@ -43,6 +44,7 @@ Plug 'tpope/vim-surround'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
 "" Status bar
 Plug 'itchyny/lightline.vim'
@@ -125,6 +127,8 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 
 autocmd FileType python BracelessEnable +fold
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 
 function! GitBranch()
 	if (gitbranch#name() ==# '')
@@ -133,3 +137,5 @@ function! GitBranch()
 		return "\ue0a0 " . gitbranch#name()
 	endif
 endfunction
+
+source /home/daniel/.config/nvim/coc.vimrc
