@@ -42,7 +42,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mg979/vim-visual-multi', {'branch' : 'master'}
 Plug 'tpope/vim-surround'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
@@ -58,6 +58,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'sheerun/vim-polyglot'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ap/vim-css-color'
 "" Code help
 Plug 'tmsvg/pear-tree'
 Plug 'alvan/vim-closetag'
