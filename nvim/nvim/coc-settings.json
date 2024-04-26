@@ -1482,6 +1482,11 @@
             "args" : ["up", "--method", "stdio"],
             "filetypes": ["sql", "mysql"]
           }
+        },
+        "csharp-ls": {
+          "command": "csharp-ls",
+          "filetypes": ["cs"],
+          "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
         }
       }
     },

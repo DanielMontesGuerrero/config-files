@@ -41,11 +41,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mg979/vim-visual-multi', {'branch' : 'master'}
 Plug 'tpope/vim-surround'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Plug 'vim-scripts/AutoComplPop'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
+Plug 'alvan/vim-closetag'
 "" Status bar
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
@@ -69,6 +71,8 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive'
 "" Latex
 Plug 'lervag/vimtex'
+"" Godot
+Plug 'habamax/vim-godot'
 call plug#end()
 
 colorscheme gruvbox
@@ -123,9 +127,17 @@ let g:rainbow_conf = {
 \	'ctermfgs': ['red', 'blue', 'yellow', 'green', 'cyan', 'magenta'],
 \}
 
+let g:closetag_filetypes = 'html,js,typescriptreact'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_regions = {
+\ 'typescript.tsx': 'jsxRegion,tsxRegion',
+\ 'javascript.jsx': 'jsxRegion',
+\ }
+
 let mapleader=" "
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>mp :MarkdownPreviewToggle<CR>
 
 autocmd FileType python BracelessEnable +fold
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -138,5 +150,7 @@ function! GitBranch()
 		return "\ue0a0 " . gitbranch#name()
 	endif
 endfunction
+
+autocmd BufNewFile *.cpp 0r /home/daniel/Documents/ICPC/main.cpp
 
 source /home/daniel/.config/nvim/coc.vimrc
