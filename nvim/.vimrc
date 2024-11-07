@@ -48,6 +48,8 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
 Plug 'alvan/vim-closetag'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': 'release' }
 "" Status bar
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
@@ -138,6 +140,8 @@ let mapleader=" "
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>mp :MarkdownPreviewToggle<CR>
+nmap <Leader>ff :Telescope find_files<CR>
+nmap <Leader>fs :Telescope live_grep<CR>
 
 autocmd FileType python BracelessEnable +fold
 autocmd FileType json syntax match Comment +\/\/.\+$+
